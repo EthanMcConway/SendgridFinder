@@ -94,7 +94,7 @@
         borderRadius: '4px',
         border: '1px solid #ccc'
     });
-    regionSelect.innerHTML = '<option value="EU">EU</option><option value="us">US</option>';
+    regionSelect.innerHTML = '<option value="eu">EU</option><option value="us">US</option>';
 
     inputGroup.appendChild(shopIdInput);
     inputGroup.appendChild(regionSelect);
@@ -130,7 +130,7 @@
     function calculateSubAccount() {
     const shopId = parseInt(shopIdInput.value, 10);
     const region = regionSelect.value;
-    const remainder = region === 'EU' ? shopId % 6 : shopId % 4;
+    const remainder = region === 'eu' ? shopId % 6 : shopId % 4;
     subAccount = `ecom-prod-${region}-${remainder}`;
     resultDisplay.textContent = `Sub-Account: ${subAccount}`;
 }
